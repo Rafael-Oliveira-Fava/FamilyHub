@@ -1,0 +1,86 @@
+/* ===== LOGIN SCREEN ===== */
+.login-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.login-screen::before {
+  content: '';
+  position: absolute; top: -10%; right: -5%;
+  width: 500px; height: 500px;
+  background: rgba(124,58,237,.08);
+  border-radius: 50%; filter: blur(100px);
+}
+.login-screen::after {
+  content: '';
+  position: absolute; bottom: -10%; left: -5%;
+  width: 500px; height: 500px;
+  background: rgba(59,130,246,.06);
+  border-radius: 50%; filter: blur(100px);
+}
+
+.login-title    { font-size: 2.5rem; font-weight: 800; margin-bottom: 8px; position: relative; z-index: 1; }
+.login-subtitle { color: var(--text-sec); font-size: 1.1rem; margin-bottom: 48px; position: relative; z-index: 1; }
+
+.profiles-grid {
+  display: flex; flex-wrap: wrap;
+  justify-content: center; gap: 40px;
+  position: relative; z-index: 1;
+}
+
+.profile-item {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 12px;
+  cursor: pointer; transition: var(--transition);
+}
+.profile-item:hover .profile-avatar { border-color: var(--brand-500); transform: scale(1.05); }
+.profile-item:hover .profile-name   { color: #fff; }
+
+.profile-avatar {
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  transition: var(--transition);
+  object-fit: cover;
+  filter: grayscale(30%);
+}
+.profile-item:hover .profile-avatar { filter: grayscale(0); }
+.profile-name { color: var(--text-sec); font-size: 1.1rem; font-weight: 500; transition: var(--transition); }
+
+/* ===== PIN SCREEN ===== */
+.pin-screen {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px; background: var(--bg);
+}
+.pin-box { width: 100%; max-width: 380px; text-align: center; }
+.pin-box .profile-avatar { width: 80px; height: 80px; margin: 0 auto 16px; border: 2px solid var(--border); }
+.pin-box h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 4px; }
+.pin-box p  { color: var(--text-sec); font-size: .9rem; margin-bottom: 24px; }
+
+.pin-input {
+  width: 100%; text-align: center;
+  font-size: 2rem; letter-spacing: .5em;
+  padding: 14px; border-radius: 16px;
+  background: #18181b; border: 1px solid var(--border); margin-bottom: 16px;
+}
+.pin-error {
+  background: rgba(239,68,68,.1); color: var(--red);
+  text-align: center; font-size: .85rem;
+  padding: 8px; border-radius: 8px;
+  border: 1px solid rgba(239,68,68,.2); margin-bottom: 16px;
+}
+.pin-buttons { display: flex; gap: 12px; }
+.pin-buttons button {
+  flex: 1; padding: 12px; border-radius: 12px;
+  font-weight: 600; font-size: .9rem; transition: var(--transition);
+}
+.btn-cancel { background: #27272a; color: var(--text-sec); }
+.btn-cancel:hover { background: #3f3f46; color: #fff; }
+.btn-enter  { background: var(--brand-600); color: #fff; box-shadow: 0 4px 15px rgba(124,58,237,.3); }
+.btn-enter:hover { background: var(--brand-500); }

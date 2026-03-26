@@ -1,0 +1,454 @@
+/* ===== ACTIVITIES VIEW ===== */
+
+.container-atividades {
+  padding: 20px;
+}
+
+.atividades-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Data group header */
+.grupo-atividades-data {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.data-grupo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  text-transform: capitalize;
+  margin: 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--border);
+}
+
+/* Activity item */
+.atividades-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.atividade-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: all .2s ease;
+  gap: 12px;
+}
+
+.atividade-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+  border-color: var(--brand-400);
+}
+
+.atividade-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.atividade-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+  font-size: .85rem;
+  flex-wrap: wrap;
+}
+
+.atividade-hora {
+  font-weight: 700;
+  color: var(--text);
+  min-width: fit-content;
+}
+
+.atividade-tipo {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  background: rgba(124, 58, 237, .1);
+  color: var(--brand-500);
+  border-radius: 6px;
+  font-size: .75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.atividade-tipo.school {
+  background: rgba(37, 99, 235, .1);
+  color: #2563eb;
+}
+
+.atividade-tipo.sport {
+  background: rgba(34, 197, 94, .1);
+  color: #22c55e;
+}
+
+.atividade-tipo.social {
+  background: rgba(239, 68, 68, .1);
+  color: #ef4444;
+}
+
+.atividade-tipo.household {
+  background: rgba(217, 119, 6, .1);
+  color: #d97706;
+}
+
+.atividade-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  background: rgba(180, 83, 9, .1);
+  color: #b45309;
+  border-radius: 6px;
+  font-size: .75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.atividade-status.pending {
+  background: rgba(234, 179, 8, .1);
+  color: #eab308;
+}
+
+.atividade-status.awaiting {
+  background: rgba(236, 72, 153, .1);
+  color: #ec4899;
+}
+
+.atividade-status.approved {
+  background: rgba(34, 197, 94, .1);
+  color: #22c55e;
+}
+
+.atividade-status.rejected {
+  background: rgba(239, 68, 68, .1);
+  color: #ef4444;
+}
+
+.atividade-desc {
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+/* ===== PARTICIPANTES DISPLAY (lista de atividades) ===== */
+.atividade-participantes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.participante-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 8px 2px 3px;
+  background: rgba(124, 58, 237, .08);
+  border: 1px solid rgba(124, 58, 237, .18);
+  border-radius: 20px;
+  font-size: .78rem;
+  color: var(--text-muted);
+}
+
+.participante-avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ===== LEMBRETE BADGE ===== */
+.atividade-lembrete {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 8px;
+  background: rgba(245, 158, 11, .12);
+  color: #f59e0b;
+  border-radius: 6px;
+  font-size: .72rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ===== CHIPS DE MULTI-MEMBROS NO MODAL ===== */
+.membros-chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px;
+  background: rgba(0,0,0,.04);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  min-height: 52px;
+}
+
+.membro-chip-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px 4px 5px;
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: 24px;
+  font-size: .82rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all .2s ease;
+  font-family: inherit;
+}
+
+.membro-chip-toggle:hover {
+  border-color: var(--brand-400);
+  color: var(--text);
+}
+
+.membro-chip-toggle.selecionado {
+  background: rgba(124, 58, 237, .15);
+  border-color: var(--brand-500);
+  color: var(--brand-400);
+  font-weight: 600;
+}
+
+.chip-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Dica de hint abaixo dos campos */
+.form-hint {
+  font-size: .75rem;
+  color: var(--text-muted);
+  margin: 4px 0 0;
+}
+
+.label-opcional {
+  font-size: .72rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+.atividade-acoes {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: rgba(255, 255, 255, .04);
+  border: 1px solid rgba(255, 255, 255, .07);
+  border-radius: 8px;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all .2s ease;
+  flex-shrink: 0;
+}
+
+.btn-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.btn-icon:hover {
+  background: rgba(255, 255, 255, .09);
+  color: var(--text);
+  border-color: rgba(255, 255, 255, .15);
+}
+
+.btn-icon.delete:hover {
+  background: rgba(239, 68, 68, .15);
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, .25);
+}
+
+/* Empty state */
+.empty-state-activities {
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .atividade-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .atividade-header {
+    width: 100%;
+  }
+
+  .atividade-acoes {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+
+.container-atividades {
+  padding: 20px;
+}
+
+.atividades-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Data group header */
+.grupo-atividades-data {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.data-grupo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  text-transform: capitalize;
+  margin: 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--border);
+}
+
+/* Activity item */
+.atividades-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.atividade-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: all .2s ease;
+  gap: 12px;
+}
+
+.atividade-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+  border-color: var(--brand-400);
+}
+
+.atividade-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.atividade-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+  font-size: .85rem;
+  flex-wrap: wrap;
+}
+
+.atividade-hora {
+  font-weight: 700;
+  color: var(--text);
+  min-width: fit-content;
+}
+
+.atividade-tipo {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  background: rgba(124, 58, 237, .1);
+  color: var(--brand-500);
+  border-radius: 6px;
+  font-size: .75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.atividade-tipo.school {
+  background: rgba(37, 99, 235, .1);
+  color: #2563eb;
+}
+
+.atividade-tipo.sport {
+  background: rgba(34, 197, 94, .1);
+  color: #22c55e;
+}
+
+.atividade-tipo.social {
+  background: rgba(239, 68, 68, .1);
+  color: #ef4444;
+}
+
+.atividade-tipo.household {
+  background: rgba(217, 119, 6, .1);
+  color: #d97706;
+}
+
+.atividade-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  background: rgba(180, 83, 9, .1);
+  color: #b45309;
+  border-radius: 6px;
+  font-size: .75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.atividade-status.pending {
+  background: rgba(234, 179, 8, .1);
+  color: #eab308;
+}
+
+.atividade-status.awaiting {
+  background: rgba(236, 72, 153, .1);
+  color: #ec4899;
+}
+
+.atividade-status.approved {
+  background: rgba(34, 197, 94, .1);
+  color: #22c55e;
+}
+
+.atividade-status.rejected {
+  background: rgba(239, 68, 68, .1);
+  color: #ef4444;
+}
+
+.atividade-desc {
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}

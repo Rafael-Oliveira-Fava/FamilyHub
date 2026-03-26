@@ -1,0 +1,135 @@
+/* ===== MEMBERS ===== */
+.members-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 32px; }
+.members-header h2 { font-size: 1.6rem; font-weight: 800; letter-spacing: -.03em; color: var(--text); }
+.members-header p  { color: var(--text-muted); font-size: .85rem; margin-top: 4px; }
+.members-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap: 16px; }
+
+/* Member Card */
+.member-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 20px; overflow: hidden; display: flex; flex-direction: column;
+  position: relative; transition: box-shadow .2s ease, transform .2s ease; cursor: default;
+}
+.member-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,.35); transform: translateY(-3px); }
+.member-card-banner { height: 4px; flex-shrink: 0; }
+
+.member-card .admin-badge {
+  position: absolute; top: 14px; right: 14px;
+  font-size: .7rem; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1);
+  border-radius: 8px; padding: 3px 7px; color: var(--text-muted); letter-spacing: .02em;
+}
+.member-card .bday-soon-badge {
+  position: absolute; top: 14px; left: 14px;
+  font-size: .65rem; font-weight: 700;
+  background: rgba(251,146,60,.12); border: 1px solid rgba(251,146,60,.25);
+  border-radius: 8px; padding: 3px 8px; color: #fb923c; letter-spacing: .02em;
+}
+
+.member-card-avatar-wrap { display: flex; align-items: center; gap: 14px; padding: 20px 20px 0; }
+.member-card-avatar-wrap .avatar-ring { width: 56px; height: 56px; border-radius: 14px; flex-shrink: 0; overflow: hidden; position: relative; }
+.member-card-avatar-wrap .avatar-ring img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.member-card-avatar-wrap .avatar-initials { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 800; color: #fff; background: rgba(255,255,255,.1); }
+
+.member-card-name-block { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.member-card-name-block h3 { font-size: 1rem; font-weight: 800; letter-spacing: -.02em; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.member-role-badge { display: inline-block; font-size: .6rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; padding: 2px 8px; border-radius: 6px; width: fit-content; }
+
+.member-card-body { padding: 16px 20px 20px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+.member-bio-row { display: flex; align-items: center; gap: 12px; }
+.member-bio-row span { display: flex; align-items: center; gap: 5px; font-size: .78rem; font-weight: 600; color: var(--text-muted); }
+.member-bio-row span em { font-style: normal; color: var(--text-sec); }
+
+.member-xp-bar-wrap { display: flex; flex-direction: column; gap: 6px; }
+.member-xp-bar-label { display: flex; justify-content: space-between; align-items: center; }
+.member-xp-bar-label span:first-child { font-size: .7rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: .08em; }
+.member-xp-bar-label span:last-child  { font-size: .75rem; font-weight: 800; color: var(--text-sec); }
+.member-xp-bar-track { height: 5px; background: rgba(255,255,255,.06); border-radius: 99px; overflow: hidden; }
+.member-xp-bar-fill  { height: 100%; border-radius: 99px; transition: width .8s cubic-bezier(.4,0,.2,1); }
+
+.member-stats-row { display: flex; gap: 8px; }
+.member-stat-box { flex: 1; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.06); border-radius: 10px; padding: 8px 10px; display: flex; flex-direction: column; gap: 2px; }
+.member-stat-box .stat-label { font-size: .6rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); }
+.member-stat-box .stat-value { font-size: .85rem; font-weight: 800; color: var(--text); }
+
+.member-card .member-actions { display: flex; gap: 6px; margin-top: auto; }
+.member-card .member-actions button {
+  flex: 1; padding: 8px 12px; border-radius: 10px; font-size: .75rem; font-weight: 700;
+  color: var(--text-muted); background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07);
+  transition: var(--transition); cursor: pointer; letter-spacing: .02em;
+}
+.member-card .member-actions button:hover { background: rgba(255,255,255,.09); color: var(--text); }
+.member-divider { border: none; border-top: 1px solid rgba(255,255,255,.06); }
+
+/* Add Member Card */
+.add-member-card {
+  border: 1px dashed rgba(255,255,255,.1); border-radius: 20px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  min-height: 280px; cursor: pointer; transition: var(--transition); gap: 10px;
+}
+.add-member-card:hover { border-color: var(--brand-500); background: rgba(124,58,237,.04); }
+.add-member-card .add-icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: var(--text-muted); transition: var(--transition); }
+.add-member-card:hover .add-icon { background: rgba(124,58,237,.12); border-color: var(--brand-500); color: var(--brand-400); }
+.add-member-card span  { font-size: .85rem; font-weight: 700; color: var(--text-muted); transition: var(--transition); }
+.add-member-card:hover span { color: var(--brand-400); }
+.add-member-card small { font-size: .72rem; color: var(--text-muted); opacity: .6; }
+
+/* =====  Mapeiam as classes do JS traduzido ===== */
+/* Os arquivos JS traduzidos usam classes em PT-BR; estes aliases garantem compatibilidade */
+
+/* Cabeçalho */
+.cabecalho-membros       { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 32px; }
+.cabecalho-membros h2    { font-size: 1.6rem; font-weight: 800; letter-spacing: -.03em; color: var(--text); }
+.cabecalho-membros p     { color: var(--text-muted); font-size: .85rem; margin-top: 4px; }
+
+/* Grade */
+.grade-membros           { display: grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap: 16px; }
+
+/* Card do membro */
+.card-membro             { background: var(--card); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; position: relative; transition: box-shadow .2s ease, transform .2s ease; cursor: default; }
+.card-membro:hover       { box-shadow: 0 12px 40px rgba(0,0,0,.35); transform: translateY(-3px); }
+.faixa-card-membro       { height: 4px; flex-shrink: 0; }
+
+/* Badges posicionados absolutamente */
+.badge-admin     { position: absolute; top: 14px; right: 14px; font-size: .7rem; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1); border-radius: 8px; padding: 3px 7px; color: var(--text-muted); letter-spacing: .02em; z-index: 2; }
+.badge-aniversario { position: absolute; top: 14px; left: 14px; font-size: .65rem; font-weight: 700; background: rgba(251,146,60,.12); border: 1px solid rgba(251,146,60,.25); border-radius: 8px; padding: 3px 8px; color: #fb923c; letter-spacing: .02em; z-index: 2; max-width: calc(100% - 80px); }
+
+/* Avatar wrap */
+.wrap-avatar-card           { display: flex; align-items: center; gap: 14px; padding: 20px 20px 0; }
+.anel-avatar                { width: 56px; height: 56px; border-radius: 14px; flex-shrink: 0; overflow: hidden; position: relative; }
+.anel-avatar img            { width: 100%; height: 100%; object-fit: cover; display: block; }
+.avatar-iniciais            { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 800; color: #fff; background: rgba(255,255,255,.1); }
+.bloco-nome-card            { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.bloco-nome-card h3         { font-size: 1rem; font-weight: 800; letter-spacing: -.02em; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.badge-papel-membro         { display: inline-block; font-size: .6rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; padding: 2px 8px; border-radius: 6px; width: fit-content; }
+
+/* Corpo do card */
+.corpo-card-membro          { padding: 16px 20px 20px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+.linha-bio                  { display: flex; align-items: center; gap: 12px; }
+.linha-bio span             { display: flex; align-items: center; gap: 5px; font-size: .78rem; font-weight: 600; color: var(--text-muted); }
+.linha-bio span em          { font-style: normal; color: var(--text-sec); }
+
+/* Barra de XP do membro */
+.wrap-barra-xp-membro       { display: flex; flex-direction: column; gap: 6px; }
+.label-barra-xp             { display: flex; justify-content: space-between; align-items: center; }
+.label-barra-xp span:first-child { font-size: .7rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: .08em; }
+.label-barra-xp span:last-child  { font-size: .75rem; font-weight: 800; color: var(--text-sec); }
+.trilha-barra-xp            { height: 5px; background: rgba(255,255,255,.06); border-radius: 99px; overflow: hidden; }
+.fill-barra-xp-membro       { height: 100%; border-radius: 99px; transition: width .8s cubic-bezier(.4,0,.2,1); }
+
+/* Stats row */
+.linha-stats-membro         { display: flex; gap: 8px; }
+.caixa-stat-membro          { flex: 1; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.06); border-radius: 10px; padding: 8px 10px; display: flex; flex-direction: column; gap: 2px; }
+
+/* Ações */
+.acoes-membro               { display: flex; gap: 6px; margin-top: auto; }
+.acoes-membro button        { flex: 1; padding: 8px 12px; border-radius: 10px; font-size: .75rem; font-weight: 700; color: var(--text-muted); background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); transition: var(--transition); cursor: pointer; letter-spacing: .02em; }
+.acoes-membro button:hover  { background: rgba(255,255,255,.09); color: var(--text); }
+
+/* Card adicionar membro */
+.card-adicionar-membro      { border: 1px dashed rgba(255,255,255,.1); border-radius: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 280px; cursor: pointer; transition: var(--transition); gap: 10px; }
+.card-adicionar-membro:hover { border-color: var(--brand-500); background: rgba(124,58,237,.04); }
+.icone-adicionar            { width: 44px; height: 44px; border-radius: 12px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: var(--text-muted); transition: var(--transition); }
+.card-adicionar-membro:hover .icone-adicionar { background: rgba(124,58,237,.12); border-color: var(--brand-500); color: var(--brand-400); }
+.card-adicionar-membro span  { font-size: .85rem; font-weight: 700; color: var(--text-muted); transition: var(--transition); }
+.card-adicionar-membro:hover span { color: var(--brand-400); }
+.card-adicionar-membro small { font-size: .72rem; color: var(--text-muted); opacity: .6; }

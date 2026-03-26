@@ -1,0 +1,104 @@
+/* ===== LIGHT THEME ===== */
+body.tema-claro {
+  --bg: #f4f4f5; --card: #ffffff; --border: #e4e4e7;
+  --text: #18181b; --text-sec: #52525b; --text-muted: #a1a1aa;
+}
+body.tema-claro .sidebar          { background: #ffffff; border-right-color: #e4e4e7; }
+body.tema-claro .top-bar          { background: rgba(244,244,245,.95); border-bottom: 1px solid #e4e4e7; }
+body.tema-claro ::-webkit-scrollbar-track { background: #f4f4f5; }
+body.tema-claro ::-webkit-scrollbar-thumb { background: #d4d4d8; }
+body.tema-claro ::-webkit-scrollbar-thumb:hover { background: #a1a1aa; }
+
+/* Login */
+body.tema-claro .login-screen::before { background: rgba(124,58,237,.06); }
+body.tema-claro .login-screen::after  { background: rgba(59,130,246,.04);  }
+body.tema-claro .pin-input            { background: #f4f4f5; }
+body.tema-claro .profile-item:hover .profile-name { color: var(--text); }
+
+/* Nav */
+body.tema-claro .nav-item:hover { background: #f4f4f5; color: var(--text); }
+
+/* Inputs */
+body.tema-claro input, body.tema-claro select, body.tema-claro textarea { background: #f4f4f5; border-color: #e4e4e7; color: var(--text); }
+body.tema-claro input:focus, body.tema-claro select:focus, body.tema-claro textarea:focus { background: #fff; border-color: var(--brand-400); }
+
+/* Buttons */
+body.tema-claro .icon-btn:hover    { background: #e4e4e7; color: var(--text); }
+body.tema-claro .btn-cancel        { background: #e4e4e7; color: var(--text-sec); }
+body.tema-claro .btn-cancel:hover  { background: #d4d4d8; color: var(--text); }
+body.tema-claro .btn-new-task      { background: var(--brand-600); color: #fff; }
+body.tema-claro .btn-new-task:hover{ background: var(--brand-500); }
+body.tema-claro .btn-logout:hover  { color: var(--red); background: rgba(239,68,68,.08); }
+body.tema-claro .xp-bar            { background: #e4e4e7; }
+body.tema-claro .profile-info .level-badge { border-color: var(--card); }
+body.tema-claro .notif-dot         { border-color: var(--card); }
+
+/* Activities */
+body.tema-claro .activity-item:hover { box-shadow: 0 4px 12px rgba(0,0,0,.06); }
+body.tema-claro .act-icon-wrap.pending { background: #f4f4f5; color: var(--text-sec); }
+body.tema-claro .act-type-badge    { background: #f4f4f5; color: var(--text-sec); }
+
+/* Calendar */
+body.tema-claro .cal-day-header    { background: #eee; }
+body.tema-claro .cal-day           { background: #fafafa; }
+body.tema-claro .cal-day:hover     { background: #f0f0f0; }
+body.tema-claro .cal-day.today     { background: rgba(124,58,237,.05); }
+body.tema-claro .cal-day.blank     { background: #f4f4f5; }
+body.tema-claro .cal-event         { background: #fff; }
+body.tema-claro .cal-event.school  { color: #2563eb; }
+body.tema-claro .cal-event.sport   { color: #16a34a; }
+body.tema-claro .cal-event.social  { color: #dc2626; }
+body.tema-claro .cal-event.household { color: #d97706; }
+body.tema-claro .calendar-nav button:hover { color: var(--text); background: #e4e4e7; }
+body.tema-claro .calendar-grid     { box-shadow: 0 4px 16px rgba(0,0,0,.06); }
+
+/* Dashboard */
+body.tema-claro .top-performer     { background: linear-gradient(135deg,#f0ebff,#e8e0ff); color: var(--text); border: 1px solid rgba(124,58,237,.15); }
+body.tema-claro .top-performer .tp-icon   { background: rgba(124,58,237,.1); }
+body.tema-claro .top-performer .tp-footer { border-top-color: rgba(124,58,237,.12); }
+body.tema-claro .top-performer .tp-footer img { border-color: rgba(124,58,237,.2); }
+
+/* Rewards */
+body.tema-claro .wallet-card       { background: linear-gradient(135deg,#4f46e5,#7c3aed); color: #fff; }
+body.tema-claro .wallet-stat       { background: rgba(255,255,255,.15); border-color: rgba(255,255,255,.15); }
+body.tema-claro .quick-action-btn.emerald { box-shadow: 0 4px 12px rgba(16,185,129,.2); }
+body.tema-claro .quick-action-btn.sky     { box-shadow: 0 4px 12px rgba(14,165,233,.2); }
+body.tema-claro .reward-card .rc-icon     { background: #f4f4f5; }
+body.tema-claro .rc-cost.expensive        { background: #f4f4f5; }
+body.tema-claro .btn-redeem.locked        { background: #e4e4e7; color: #a1a1aa; }
+body.tema-claro .tab-btn:hover            { background: #f4f4f5; color: var(--text); }
+body.tema-claro .ach-icon                 { background: #f4f4f5; }
+body.tema-claro .ach-progress             { background: #e4e4e7; }
+body.tema-claro .txn-table thead          { background: #fafafa; }
+body.tema-claro .txn-table td             { border-bottom-color: #f4f4f5; }
+body.tema-claro .txn-table tr:hover       { background: #fafafa; }
+body.tema-claro .reward-card:hover        { box-shadow: 0 8px 20px rgba(0,0,0,.06); }
+
+/* Shopping */
+body.tema-claro .filter-btn:hover, body.tema-claro .filter-btn.active { background: #f4f4f5; color: var(--text); }
+body.tema-claro .filter-count      { background: #f4f4f5; }
+body.tema-claro .filter-btn.active .filter-count { background: #e4e4e7; }
+body.tema-claro .shop-item:hover   { background: #fafafa; border-color: #e4e4e7; }
+body.tema-claro .shop-cat-badge    { background: #f4f4f5; }
+body.tema-claro .empty-state .empty-icon { background: #f4f4f5; }
+
+/* Members */
+body.tema-claro .member-card .member-role       { background: #f4f4f5; }
+body.tema-claro .member-card .member-actions button { background: #f4f4f5; }
+body.tema-claro .member-card .member-actions button:hover { background: #e4e4e7; color: var(--text); }
+body.tema-claro .member-card:hover  { box-shadow: 0 8px 20px rgba(0,0,0,.06); }
+body.tema-claro .add-member-card    { border-color: #d4d4d8; }
+body.tema-claro .add-member-card:hover { border-color: var(--brand-400); }
+body.tema-claro .add-member-card .add-icon { background: #f4f4f5; }
+
+/* Notifications / Modal / Toast */
+body.tema-claro .notif-dropdown  { background: #fff; border-color: #e4e4e7; box-shadow: 0 8px 30px rgba(0,0,0,.1); }
+body.tema-claro .notif-item      { border-bottom-color: #f4f4f5; }
+body.tema-claro .notif-item:hover{ background: #fafafa; }
+body.tema-claro .modal           { box-shadow: 0 25px 50px rgba(0,0,0,.12); }
+body.tema-claro .modal-overlay   { background: rgba(0,0,0,.3); }
+body.tema-claro .toast           { background: #fff; border: 1px solid #e4e4e7; box-shadow: 0 4px 16px rgba(0,0,0,.1); }
+
+/* Cards */
+body.tema-claro .stat-card, body.tema-claro .card, body.tema-claro .sidebar-profile,
+body.tema-claro .filter-card, body.tema-claro .leaderboard-card { box-shadow: 0 1px 3px rgba(0,0,0,.06); }

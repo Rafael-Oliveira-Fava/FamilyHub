@@ -1,0 +1,46 @@
+/* ===== UTILITIES ===== */
+.hidden    { display: none !important; }
+.text-right{ text-align: right; }
+.sr-only   { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+
+/* ===== MOBILE ===== */
+.mobile-header   { display: none; }
+.mobile-menu-btn { display: none; }
+.mobile-fab      { display: none; }
+.sidebar-overlay { display: none; }
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed; left: -280px; top: 0; height: 100%;
+    z-index: 50; transition: transform .25s ease; width: 280px;
+  }
+  .sidebar.open { transform: translateX(280px); }
+
+  .sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.6); backdrop-filter: blur(4px); z-index: 45; }
+  .sidebar-overlay.show { display: block; }
+
+  .mobile-header    { display: flex; align-items: center; gap: 12px; }
+  .mobile-menu-btn  { display: flex; padding: 8px; color: var(--text-sec); }
+  .mobile-menu-btn svg { width: 24px; height: 24px; }
+  .top-bar h2       { display: none; }
+  .content-area     { padding: 16px; }
+  .dashboard-grid   { grid-template-columns: 1fr; }
+  .stats-grid       { grid-template-columns: 1fr; }
+  .shopping-layout  { flex-direction: column; height: auto; }
+  .shopping-sidebar { width: 100%; flex-direction: row; overflow-x: auto; }
+  .shopping-sidebar .filter-card { min-width: 200px; }
+  .shopping-sidebar .tip-card    { display: none; }
+  .rewards-header   { grid-template-columns: 1fr; }
+  .calendar-grid .cal-day { min-height: 70px; }
+  .cal-event        { font-size: 8px; padding: 2px 4px; }
+  .members-grid     { grid-template-columns: 1fr 1fr; }
+  .mobile-fab       { display: flex; position: fixed; bottom: 20px; right: 20px; width: 52px; height: 52px; background: var(--brand-600); color: #fff; border-radius: 50%; align-items: center; justify-content: center; z-index: 30; box-shadow: 0 6px 20px rgba(124,58,237,.4); }
+}
+
+@media (max-width: 480px) {
+  .stats-grid         { grid-template-columns: 1fr; }
+  .members-grid       { grid-template-columns: 1fr; }
+  .shopping-form      { flex-direction: column; }
+  .rewards-grid       { grid-template-columns: 1fr; }
+  .achievements-grid  { grid-template-columns: 1fr; }
+}
